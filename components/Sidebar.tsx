@@ -16,7 +16,7 @@ import {
 import { usePathname } from 'next/navigation';
 
 const monserrat = Montserrat({
-  weights: [600],
+  weight: [600],
   subsets: ['latin'],
 });
 
