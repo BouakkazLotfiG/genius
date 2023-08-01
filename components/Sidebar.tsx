@@ -15,10 +15,7 @@ import {
 } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 
-const monserrat = Montserrat({
-  weight: [600],
-  subsets: ['latin'],
-});
+const monserrat = Montserrat({ weight: '600', subsets: ['latin'] });
 
 const routes = [
   {
