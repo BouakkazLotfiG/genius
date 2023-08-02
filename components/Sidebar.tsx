@@ -75,7 +75,7 @@ const Sidebar = ({ apiLimitCount = 0, isPro = false }: SidebarProps) => {
       <div className='px-3  flex-1'>
         <Link className='flex items-center pl-3 mb-14' href='/dashboard'>
           <div className='relative w-24 h-24 mr-4'>
-            <Image fill alt='logo' src='/next.svg' />
+            <Image fill alt='logo' src='/logo.png' />
           </div>
           <h1 className={cn('text-2xl font-bold', monserrat.className)}>
             Genius
