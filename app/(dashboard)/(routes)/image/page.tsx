@@ -10,7 +10,6 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 
-import { Heading } from '@/components/heading';
 import { Button } from '@/components/ui/button';
 import { Card, CardFooter } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -28,6 +27,7 @@ import { useProModal } from '@/hooks/use-pro-modal';
 import { amountOptions, formSchema, resolutionOptions } from './constants';
 import { Loader } from '@/components/Loader';
 import { Empty } from '@/components/Empty';
+import { Heading } from '@/components/Heading';
 
 const PhotoPage = () => {
   const proModal = useProModal();

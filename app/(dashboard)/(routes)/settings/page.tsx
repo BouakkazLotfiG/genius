@@ -1,9 +1,8 @@
 import { Settings } from 'lucide-react';
 
-import { Heading } from '@/components/heading';
-
 import { checkSubscription } from '@/lib/subscription';
 import { SubscriptionButton } from '@/components/SubscriptionButton';
+import { Heading } from '@/components/Heading';
 
 const SettingsPage = async () => {
   const isPro = await checkSubscription();

@@ -2,7 +2,7 @@
 
 import * as z from 'zod';
 import axios from 'axios';
-import { Heading } from '@/components/Heading';
+
 import { ChatCompletionRequestMessage } from 'openai';
 import React, { useState } from 'react';
 import { toast } from 'react-hot-toast';
@@ -20,6 +20,7 @@ import { Loader } from '@/components/Loader';
 import { UserAvatar } from '@/components/UserAvatar';
 import { BotAvatar } from '@/components/BotAvatar';
 import { useProModal } from '@/hooks/use-pro-modal';
+import { Heading } from '@/components/Heading';
 
 const ConversationPage = () => {
   const proModal = useProModal();

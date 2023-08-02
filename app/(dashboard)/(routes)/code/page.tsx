@@ -10,7 +10,6 @@ import ReactMarkdown from 'react-markdown';
 import { useRouter } from 'next/navigation';
 import { ChatCompletionRequestMessage } from 'openai';
 
-import { Heading } from '@/components/heading';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -25,6 +24,7 @@ import { UserAvatar } from '@/components/UserAvatar';
 import { Loader } from '@/components/Loader';
 import { Empty } from '@/components/Empty';
 import { useProModal } from '@/hooks/use-pro-modal';
+import { Heading } from '@/components/Heading';
 
 const CodePage = () => {
   const router = useRouter();
