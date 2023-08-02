@@ -14,6 +14,7 @@ import {
   Settings,
 } from 'lucide-react';
 import { usePathname } from 'next/navigation';
+import { FreeCounter } from './FreeCounter';
 
 const monserrat = Montserrat({ weight: '600', subsets: ['latin'] });
 
@@ -61,10 +62,14 @@ const routes = [
   },
 ];
 
-const Sidebar = () => {
+interface SidebarProps {
+  apiLimitCount: number;
+}
+
+const Sidebar = ({ apiLimitCount = 0 }: SidebarProps) => {
   const pathname = usePathname();
   return (
-    <div className='space-y-4 flex flex-col h-full bg-[#111827] text-white'>
+    <div className='space-y-4 pb-3 flex flex-col h-full bg-[#111827] text-white'>
       {' '}
       <div className='px-3  flex-1'>
         <Link className='flex items-center pl-3 mb-14' href='/dashboard'>
@@ -96,6 +101,7 @@ const Sidebar = () => {
           ))}
         </div>
       </div>
+      <FreeCounter apiLimitCount={apiLimitCount} />
     </div>
   );
 };

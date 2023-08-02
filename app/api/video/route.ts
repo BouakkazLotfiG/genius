@@ -2,7 +2,7 @@ import Replicate from 'replicate';
 import { auth } from '@clerk/nextjs';
 import { NextResponse } from 'next/server';
 
-// import { incrementApiLimit, checkApiLimit } from "@/lib/api-limit";
+import { incrementApiLimit, checkApiLimit } from '@/lib/api-limit';
 // import { checkSubscription } from "@/lib/subscription";
 
 const replicate = new Replicate({
@@ -23,12 +23,15 @@ export async function POST(req: Request) {
       return new NextResponse('Prompt is required', { status: 400 });
     }
 
-    // const freeTrial = await checkApiLimit();
+    const freeTrial = await checkApiLimit();
     // const isPro = await checkSubscription();
 
-    // if (!freeTrial && !isPro) {
-    //   return new NextResponse("Free trial has expired. Please upgrade to pro.", { status: 403 });
-    // }
+    if (!freeTrial) {
+      return new NextResponse(
+        'Free trial has expired. Please upgrade to pro.',
+        { status: 403 }
+      );
+    }
 
     const response = await replicate.run(
       'anotherjesse/zeroscope-v2-xl:71996d331e8ede8ef7bd76eba9fae076d31792e4ddf4ad057779b443d6aea62f',
@@ -40,7 +43,7 @@ export async function POST(req: Request) {
     );
 
     // if (!isPro) {
-    //   await incrementApiLimit();
+    await incrementApiLimit();
     // }
 
     return NextResponse.json(response);
