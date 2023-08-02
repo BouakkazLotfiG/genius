@@ -5,7 +5,7 @@ import axios from 'axios';
 import { Code } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
-// import { toast } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 import ReactMarkdown from 'react-markdown';
 import { useRouter } from 'next/navigation';
 import { ChatCompletionRequestMessage } from 'openai';
@@ -56,7 +56,7 @@ const CodePage = () => {
       if (error?.response?.status === 403) {
         proModal.onOpen();
       } else {
-        // toast.error("Something went wrong.");
+        toast.error('Something went wrong.');
         console.log(error);
       }
     } finally {

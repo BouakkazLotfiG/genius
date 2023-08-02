@@ -30,7 +30,7 @@ export const FreeCounter = ({
     <div className='px-3'>
       <Card className='bg-white/10 border-0'>
         <CardContent className='py-6'>
-          {!isPro && (
+          {!isPro ? (
             <>
               <div className='text-center text-sm text-white mb-4 space-y-2'>
                 <p>
@@ -50,16 +50,17 @@ export const FreeCounter = ({
                 <Zap className='w-4 h-4 ml-2 fill-white' />
               </Button>
             </>
+          ) : (
+            <div className='text-center text-md font-bold text-white '>
+              <p>
+                You are a{' '}
+                <Badge variant='pro' className='uppercase text-sm py-1'>
+                  pro
+                </Badge>{' '}
+                user
+              </p>
+            </div>
           )}
-          <div className='text-center text-md font-bold text-white '>
-            <p>
-              You are a{' '}
-              <Badge variant='pro' className='uppercase text-sm py-1'>
-                pro
-              </Badge>{' '}
-              user
-            </p>
-          </div>
         </CardContent>
       </Card>
     </div>

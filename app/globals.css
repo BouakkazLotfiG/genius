@@ -4,7 +4,10 @@
 
 html, body, :root {
   height: 100%;
-  
+  background-color: #111827;
+opacity: 1;
+background-image: radial-gradient(#1e2035 1.5px, #111827 1.5px);
+background-size: 30px 30px;
 }
  
 @layer base {

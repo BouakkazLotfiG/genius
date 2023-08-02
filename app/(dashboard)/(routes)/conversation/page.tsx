@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Heading } from '@/components/Heading';
 import { ChatCompletionRequestMessage } from 'openai';
 import React, { useState } from 'react';
+import { toast } from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { MessageSquare } from 'lucide-react';
@@ -48,7 +49,7 @@ const ConversationPage = () => {
       if (error?.response?.status === 403) {
         proModal.onOpen();
       } else {
-        // toast.error("Something went wrong.");
+        toast.error('Something went wrong.');
         console.log(error);
       }
     } finally {
