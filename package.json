@@ -12,7 +12,7 @@
   "dependencies": {
     "@clerk/nextjs": "^4.23.1",
     "@hookform/resolvers": "^3.1.1",
-    "@prisma/client": "^5.1.0",
+    "@prisma/client": "^5.2.0",
     "@radix-ui/react-avatar": "^1.0.3",
     "@radix-ui/react-dialog": "^1.0.4",
     "@radix-ui/react-label": "^2.0.2",
@@ -48,6 +48,6 @@
   },
   "devDependencies": {
     "@types/react": "^18.2.18",
-    "prisma": "^5.1.0"
+    "prisma": "^5.2.0"
   }
 }
